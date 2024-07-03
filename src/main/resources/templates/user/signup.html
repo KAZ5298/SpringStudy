@@ -47,9 +47,8 @@
 		<!-- 性別 -->
 		<div class="form-group">
 			<div th:each="item : ${genderMap}" class="form-check-inline">
-				<label class="form-check-label" th:text="${item.key}"></label>
 				<input type="radio" class="form-check-input" th:value="${item.value}" th:field="*{gender}" th:errorclass="is-invalid"/>	
-				<div class="invalid-feedback" th:errors="*{userId}"></div>
+				<label class="form-check-label" th:text="${item.key}"></label>
 			</div>
 			<div class="text-danger" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></div>
 		</div>
