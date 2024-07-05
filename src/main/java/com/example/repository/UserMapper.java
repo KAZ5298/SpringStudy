@@ -14,7 +14,7 @@ public interface UserMapper {
 	public int insertOne(MUser user);
 	
 	/** ユーザー取得 */
-	public List<MUser> findMany();
+	public List<MUser> findMany(MUser user);
 	
 	/** ユーザー取得(1件) */
 	public MUser findOne(String userId);
@@ -23,6 +23,5 @@ public interface UserMapper {
 	public void updateOne(@Param("userId") String userId, @Param("password") String password, @Param("userName") String userName);
 	
 	/** ユーザー削除(1件) */
-	
 	public int deleteOne(@Param("userId") String userId);
 }
