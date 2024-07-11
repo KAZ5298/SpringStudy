@@ -30,6 +30,16 @@ public class SecurityConfig {
                 .requestMatchers(mvc.pattern("/user/signup")).permitAll()
                 .anyRequest().authenticated()
         );
+        
+        http.formLogin(login -> login
+                .loginProcessingUrl("/login")
+                .loginPage("/login")
+                .failureUrl("/login?error")
+                .usernameParameter("userId")
+                .passwordParameter("password")
+                .defaultSuccessUrl("/user/list", true)
+                .permitAll()
+        );
 
         http.headers(headers -> headers
                 .frameOptions(FrameOptionsConfig::disable)
