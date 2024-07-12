@@ -46,8 +46,11 @@ public class SecurityConfig {
                 .passwordParameter("password")
                 .defaultSuccessUrl("/user/list", true)
                 .permitAll()
+        ).logout(logout -> logout
+        		.logoutUrl("/logout")
+        		.logoutSuccessUrl("/login?logout")
         );
-
+        
         http.headers(headers -> headers
                 .frameOptions(FrameOptionsConfig::disable)
         );
