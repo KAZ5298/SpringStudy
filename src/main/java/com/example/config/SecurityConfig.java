@@ -58,7 +58,7 @@ public class SecurityConfig {
         // CSRF 対策を無効に設定 (一時的)
         http.csrf(csrf -> csrf
                 .ignoringRequestMatchers(PathRequest.toH2Console())
-                .disable()
+//                .disable()
         );
 
         return http.build();
