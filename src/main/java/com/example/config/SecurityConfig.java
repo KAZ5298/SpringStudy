@@ -35,6 +35,7 @@ public class SecurityConfig {
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .requestMatchers(PathRequest.toH2Console()).permitAll()
                 .requestMatchers(mvc.pattern("/user/signup")).permitAll()
+                .requestMatchers(mvc.pattern("/user/signup/rest")).permitAll()
                 .requestMatchers(mvc.pattern("/admin")).hasAuthority("ROLE_ADMIN")
                 .anyRequest().authenticated()
         );
