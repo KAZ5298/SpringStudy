@@ -35,6 +35,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		// 権限List作成
 		GrantedAuthority authority = new SimpleGrantedAuthority(loginUser.getRole());
 		List<GrantedAuthority> authorities = new ArrayList<>();
+		authorities.add(authority);
 		
 		// UserDetails生成
 		UserDetails userDetails = (UserDetails) new User(loginUser.getUserId(), loginUser.getPassword(), authorities);
