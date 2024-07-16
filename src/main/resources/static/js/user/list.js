@@ -60,7 +60,7 @@ function createDataTables() {
 	table = $('#user-list-table').DataTable({
 		// 日本語化
 		language : {
-			url : '/webjars/datatables-plugins/i18n/japanese.json'
+			url : '/webjars/datatables-plugins/i18n/ja.json'
 		},
 		// データのセット
 		data : userData,
