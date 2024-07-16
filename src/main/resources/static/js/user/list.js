@@ -25,11 +25,11 @@ function search() {
 	// ajax通信
 	$.ajax({
 		type : "GET",
-		cache : false,
 		url : '/user/get/list',
 		data : formData,
 		dataType : 'json',
 		contentType : 'application/json; charset=UTF-8',
+		cache : false,
 		timeout : 5000,
 	}).done(function (data) {
 		// ajax成功時の処理
@@ -73,7 +73,7 @@ function createDataTables() {
 				render : function ( data, type, row ) {
 					var date = new Date(data);
 					var year = date.getFullYear();
-					var month = date.getMonth();
+					var month = date.getMonth() + 1;
 					var date = date.getDate();
 					return year + '/' + month + '/' + date;
 				}
@@ -83,7 +83,7 @@ function createDataTables() {
 				data : 'gender', // 性別
 				render : function ( data, type, row ) {
 					var gender = '';
-					if (date === 1) {
+					if (data === 1) {
 						gender = '男性';
 					} else {
 						gender = '女性';
